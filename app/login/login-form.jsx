@@ -5,11 +5,18 @@ import { useState } from "react";
 export default function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Handle form submission logic here
+        console.log("Email:", email);
+        console.log("Password:", password);
+    } 
+
   return (
     <div className="w-[380px] mx-auto bg bg-green-200">
       <div className="bg-white shadow-md border border-gray-200 rounded-b-lg p-4 ">
-        <form action="#" className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <h3 className="text-center font-semibold text-xl text-gray-900">
             Sign in to App
           </h3>
